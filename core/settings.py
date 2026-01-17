@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-8^+=l*uabwmtf*3wcoj)ei2#cubx*nnpjj5xkp3+vsq-_inz78
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-ASGI_APPLICATION = "core.asgi.application"
 
 CHANNEL_LAYERS = {
     "default": {
