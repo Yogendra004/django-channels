@@ -4,7 +4,7 @@ from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 from django.urls import path
-from home.consumers import TestConsumer
+from home.consumers import NewTestConsumer, TestConsumer
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
@@ -17,6 +17,7 @@ application = ProtocolTypeRouter(
             URLRouter(
                 [
                     path("ws/test/", TestConsumer.as_asgi()),
+                    path("ws/new/", NewTestConsumer.as_asgi()),
                 ]
             )
         ),
