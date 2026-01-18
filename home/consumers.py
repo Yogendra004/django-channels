@@ -32,7 +32,6 @@ class TestConsumer(WebsocketConsumer):
 
 
 class NewTestConsumer(AsyncJsonWebsocketConsumer):
-
     async def connect(self):
         self.room_name = "new_consumer"
         self.room_group_name = "new_consumer_group"

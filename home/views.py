@@ -6,6 +6,7 @@ from asgiref.sync import async_to_sync
 
 # Create your views here.
 import time
+from django.http import JsonResponse
 
 
 async def home(request):
@@ -20,3 +21,14 @@ async def home(request):
         # time.sleep(1)
 
     return render(request, "home.html")
+
+
+def generate_students(request):
+    from .thread import CreateStudentThread
+
+    total = request.GET.get("total")
+
+    thread = CreateStudentThread(int(total))
+    thread.start()
+
+    return JsonResponse({"status": 200})
